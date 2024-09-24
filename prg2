@@ -1,0 +1,26 @@
+//program to access the array
+#include<stdio.h>
+void main()
+{
+    int n; 
+    //get the count for array
+    printf("Enter a number of value for array");
+    scanf("%d",&n);
+
+    //declare array
+    int age[n];
+    
+    //get value for array 
+    for (int i=0;i<n;i=i+1)
+    
+    {
+        printf("Enter value :");
+        scanf("%d",&age[1]);
+    }
+    //print the value the array
+    for(int i=0;i<n;i=i+1)
+    
+    {
+        printf("\n value in index %d is %d",i,age[i]);
+    }
+}
