@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+ char c='k';
+ //%d displays the integer value of
+ //a character
+ //%c display the actual character
+ printf("the ASCII value of %c is %d",c,c);
+ return 0;
+}
