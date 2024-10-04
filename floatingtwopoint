@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+    float A=2.12,B=3.88,product;
+    
+    product=A*B;
+    //displaying result up to 3 decimal place.
+    printf("product of enter a number is:%3f",product);
+    
+}
