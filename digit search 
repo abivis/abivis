@@ -1,0 +1,44 @@
+Question 6: Digit Search
+
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+ {
+    int n, count = 0;
+    char input[100], *token;
+    
+    printf("Enter strings separated by commas: ");
+    scanf("%s", input);
+    printf("Enter the divisor: ");
+    scanf("%d", &n);
+    
+    token = strtok(input, ",");
+    int index = 1;
+    int found = 0;
+    
+    while (token != NULL)
+ {
+        int num = atoi(token);
+        if (num % n == 0) {
+            if (found) {
+                printf(",");
+            }
+            printf("%d", index);
+            found = 1;
+        }
+        token = strtok(NULL, ",");
+        index++;
+    }
+    
+    if (!found)
+ {
+        printf("-1\n");
+    } else {
+        printf("\n");
+    }
+    
+    return 0;
+}
