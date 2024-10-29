@@ -1,0 +1,50 @@
+Question 3: Bike Rider
+
+
+#include <stdio.h>
+
+int calculateRefueling(int maxFuel, int mileage, int distance)
+ {
+    int requiredDistance = 1000;
+    int fuelNeeded = requiredDistance / mileage;
+    
+    if (fuelNeeded > maxFuel && distance == 0) 
+{
+        return -1; // Cannot reach the destination as refueling is impossible
+    }
+    
+    int refuels = 0;
+    int currentFuel = maxFuel;
+
+    while (requiredDistance > 0) {
+        int maxDistanceWithCurrentFuel = currentFuel * mileage;
+        if (maxDistanceWithCurrentFuel >= requiredDistance)
+ {
+            break;
+        }
+        
+        requiredDistance -= maxDistanceWithCurrentFuel;
+        refuels++;
+        currentFuel = maxFuel;
+    }
+    
+    return refuels;
+}
+
+int main() {
+    int maxFuel, mileage, distance;
+    
+    printf("Enter max fuel capacity, mileage and distance between fuel stations: ");
+    scanf("%d %d %d", &maxFuel, &mileage, &distance);
+    
+    int result = calculateRefueling(maxFuel, mileage, distance);
+    if (result == -1) 
+{
+        printf("-1\n");
+    } else
+ {
+        printf("%d\n", result);
+    }
+
+    return 0;
+}
