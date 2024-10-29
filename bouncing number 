@@ -1,0 +1,43 @@
+Question 4: Bouncing Number
+
+
+#include <stdio.h>
+
+int isBouncy(int num)
+ {
+    int increasing = 1, decreasing = 1;
+    int lastDigit = num % 10;
+    num /= 10;
+
+    while (num > 0)
+ {
+        int currentDigit = num % 10;
+        if (currentDigit < lastDigit)
+ {
+            increasing = 0;
+        }
+        if (currentDigit > lastDigit)
+ {
+            decreasing = 0;
+        }
+        lastDigit = currentDigit;
+        num /= 10;
+    }
+    
+    return !(increasing || decreasing); 
+}
+
+int main()
+ {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    if (isBouncy(num))
+ {
+        printf("True\n");  
+        printf("False\n"); 
+    }
+
+    return 0;
+}
