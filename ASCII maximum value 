@@ -1,0 +1,39 @@
+Question 5: ASCII Value of Maximum Occurring Character
+
+#include <stdio.h>
+#include <string.h>
+
+int main() 
+{
+    char str[100];
+    int frequency[256] = {0};
+    
+    printf("Enter a string: ");
+    scanf("%s", str);
+    
+    for (int i = 0; i < strlen(str); i++)
+ {
+        frequency[(int)str[i]]++;
+    }
+    
+    int maxAscii = -1;
+    for (int i = 0; i < 256; i++)
+ {
+        if (frequency[i] % 2 == 1 && frequency[i] > 0)
+ {
+            if (maxAscii == -1 || i > maxAscii)
+ {
+                maxAscii = i;
+            }
+        }
+    }
+    
+    if (maxAscii != -1)
+ {
+        printf("%d\n", maxAscii); // ASCII value of max occurring character
+    } else {
+        printf("-1\n"); // No character with odd frequency
+    }
+    
+    return 0;
+}
