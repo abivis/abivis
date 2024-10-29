@@ -1,0 +1,63 @@
+Question 2: Beautiful Array
+
+#include <stdio.h>
+
+int isBeautifulArray(int arr[], int length, int n)
+ {
+  
+    for (int i = 0; i < length; i++)
+ {
+        if (arr[i] < 1 || arr[i] > n)
+ {
+            return 0; // Not in range
+        }
+    }
+    
+    int isOrdered = 1;
+    for (int i = 1; i < length; i++)
+ {
+        if (arr[i - 1] > arr[i]) 
+{
+            isOrdered = 0;
+            break;
+        }
+    }
+    if (isOrdered) return 0; 
+    for (int i = 0; i < length - 1; i++)
+ {
+        for (int j = i + 1; j < length; j++) 
+{
+            if (arr[i] == arr[j])
+ {
+                return 0; // Duplicate found
+            }
+        }
+    }
+    
+    return 1;
+}
+
+int main() {
+    int n, length;
+    
+    printf("Enter N: ");
+    scanf("%d", &n);
+    printf("Enter the length of the array: ");
+     scanf("%d", &length);
+    
+    int arr[length];
+    printf("Enter array elements: ");
+    for (int i = 0; i < length; i++)
+ {
+        scanf("%d", &arr[i]);
+    }
+    
+    if (isBeautifulArray(arr, length, n))
+ {
+        printf("True\n");  
+    } else {
+        printf("False\n"); 
+    }
+    
+    return 0;
+}
