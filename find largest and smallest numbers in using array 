@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+
+int n, i;
+
+int max, min:
+
+printf("Enter number of elements: "); scanf("%d", &n);
+
+int array[n]:
+
+for(i = 0; i < n; i++) {
+
+printf("Enter element %d: ", i + 1);
+
+scanf("%d", &arrayIID:
+
+
+max = min = arrayIOI:
+
+// Find largest and smallest elements
+
+for(i = 1; i < n; i++) {
+
+if(arrayIiI > max) {
+
+max = arraylis:
+
+}
+
+if(array[i] < min) { min = arraylis:
+
+}
+
+printf("Largest element: %d\n", max); printf("Smallestment: %d\n", min);
+
+return 0:
+
+}
+
+}
+
+}
