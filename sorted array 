@@ -1,0 +1,49 @@
+
+
+#include <stdio.h>
+
+void find_last_duplicate(int arr[], int size) {
+    if (size <= 0) {
+        printf("Invalid array size\n");
+        return;
+    }
+
+    int last_duplicate_index = -1;
+    int last_duplicate_value;
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] == arr[i - 1]) {
+            last_duplicate_index = i;
+            last_duplicate_value = arr[i];
+        }
+    }
+
+    if (last_duplicate_index == -1) {
+        printf("No duplicate found\n");
+    } else {
+        printf("Last index: %d\n", last_duplicate_index);
+        printf("Last duplicate item: %d\n", last_duplicate_value);
+    }
+}
+
+int main() {
+    int size;
+    printf("Enter array size: ");
+    scanf("%d", &size);
+
+    if (size <= 0) {
+        printf("Invalid array size\n");
+        return 0;
+    }
+
+    int arr[size];
+    printf("Enter sorted array elements: ");
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    find_last_duplicate(arr, size);
+
+    return 0;
+}
+
